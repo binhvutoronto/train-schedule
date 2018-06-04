@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Train Schedule</title>
+
+    <!-- Link in Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Link to jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- Link to Fire Base -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+
+    <!-- Link to Moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <!-- Link in CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+
+  </head>
+
+  <body>
+
+    <div class="jumbotron">
+
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+          <img src="assets/images/train.jpg">
+        </div>
+        
+        <div id = "logo" class="col-lg-12 col-sm-12 col-xs-12">
+          <h1 class="text-center">Train Schedule</h1>
+          <h2 class="text-center">Add or View a Train Schedule</h2>
+          <h4 class="text-center">Where Will You Go Today?</h4>
+        </div>
+
+    </div>
+    
+  <div class="container">
+
+    <!-- Current Time -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="text-center clock-display">Current Time: <span id = "current-time" class = "clock-display"></span></h1>
+      </div>
+    </div>
+
+    <br>
+
+
+      <!-- Current Train Schedule Section -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="panel panel-default">
+
+            <!-- Title -->
+            <div class="panel-heading">
+              <h3 class="panel-title">Current Train Schedule</h3>
+            </div>
+
+            <!-- Table Body -->
+            <div class="panel-body">
+
+              <!-- Table of Train Schedule -->
+              <table class="table">
+
+                <!-- Table Header -->
+                <tr id = "static-table-header">
+                  <th>Train Name</th>
+                  <th>Destination</th>
+                  <th>Frequency (min)</th>
+                  <th>Next Arrival</th>
+                  <th>Minutes Away</th>
+                </tr>
+
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- Add a Train Panel -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="panel panel-default">
+
+            <!-- Panel Title -->
+            <div class="panel-heading">
+              <h3 class="panel-title">Add a Train</h3>
+            </div>
+            
+            <!-- Panel Body -->
+            <div class="panel-body">
+
+              <!-- Add a Train Form -->
+              <form role="form">
+
+                <!-- Train Name -->
+                <div class="form-group">
+                  <label for="text">Train Name</label>
+                  <input type="text" class="form-control" id="nameInput" placeholder="Example: Money Train">
+                </div>
+                
+                <!-- Destination -->
+                <div class="form-group">
+                  <label for="text">Train Destination</label>
+                  <input type="text" class="form-control" id="destinationInput" placeholder="Example: Las Vegas">
+                </div>
+        
+                <!-- First Train Time -->
+                <div class="form-group">
+                  <label for="text">First Departure for Today (Military Time - hh:mm)</label>
+                  <input type="text" class="form-control" id="firstArrivalInput" placeholder="Format 00:00">
+                </div>
+                
+                <!-- Frequency -->
+                <div class="form-group">
+                  <label for="text">Frequency of Departures (min)</label>
+                  <input type="number" class="form-control" id="frequencyInput" placeholder="60">
+                </div>
+                
+                <!-- Submit Button (send to database) -->
+                <button type="submit" class="btn btn-default" id="addTrainButton">Submit</button>
+
+              </form>
+
+            </div>
+          </div>
+        </div>    
+      </div>
+
+    </div>
+
+
+    <!-- Link to JavaScript -->
+    <script src="assets/script.js"></script>
+
+  </body>
+
+</html>
